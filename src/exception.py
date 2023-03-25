@@ -1,5 +1,6 @@
 import sys
-import logging
+from logger import logging
+
 def error_message_detial(error,error_detials:sys):
     _,_,exc_tb=error_detials.exc_info()
     file_name=exc_tb.tb_frame.f_code.co_filename
@@ -19,5 +20,5 @@ if __name__=="__main__":
     try:
         a=1/0
     except Exception as e:
-        # logging.info("Divide by zero")
+        logging.info("Divide by zero")
         raise CustomerException(e,sys)
